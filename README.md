@@ -106,6 +106,8 @@ python rest-server.py
 ---
 
 ## Web界面
+![Web界面展示](https://github.com/user-attachments/assets/acb8d4fd-3bfe-49de-a6fd-f02ea321c187)
+
 
 ---
 
