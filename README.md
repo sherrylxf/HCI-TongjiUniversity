@@ -106,10 +106,9 @@ python rest-server.py
 ---
 
 ## Web界面
-![Web界面展示](https://github.com/user-attachments/assets/acb8d4fd-3bfe-49de-a6fd-f02ea321c187)
-
-
+![Web界面展示.gif](src/Web%E7%95%8C%E9%9D%A2%E5%B1%95%E7%A4%BA.gif)
 ---
+
 
 ## License
 
