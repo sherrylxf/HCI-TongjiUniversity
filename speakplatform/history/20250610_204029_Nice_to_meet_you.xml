@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <xml_result>
+      <read_sentence lan="en" type="study" version="7.0.0.1020">
+          <rec_paper>
+              <read_chapter accuracy_score="4.991915" beg_pos="0" content="Nice to meet you." end_pos="246" except_info="0" fluency_score="5.000000" integrity_score="5.000000" is_rejected="false" reject_type="0" score_pattern="loose" standard_score="4.415142" total_score="4.994341" word_count="4">
+                  <sentence accuracy_score="4.741915" beg_pos="0" content="nice to meet you" end_pos="246" fluency_score="4.826109" index="0" standard_score="4.165142" total_score="4.767173" word_count="4">
+                      <word beg_pos="38" content="nice" dp_message="0" end_pos="96" global_index="0" index="0" pitch="  129.26  129.26  128.47  129.23  130.51  131.54  132.66  133.63  135.09  136.54  137.95  139.16  140.12  141.18  142.23  143.14  143.65  143.51  143.17  143.74  145.62" pitch_beg="61" pitch_end="82" property="0" total_score="4.846905">
+                          <syll beg_pos="38" content="n ay s" end_pos="96" serr_msg="0" syll_accent="0" syll_score="4.641936">
+                              <phone beg_pos="38" content="n" dp_message="0" end_pos="62" gwpp="-0.460570"></phone>
+                              <phone beg_pos="62" content="ay" dp_message="0" end_pos="80" gwpp="-0.001118"></phone>
+                              <phone beg_pos="80" content="s" dp_message="0" end_pos="96" gwpp="-0.486502"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="96" content="to" dp_message="0" end_pos="119" global_index="1" index="1" pitch="  128.78  128.78  129.70  132.53  132.91  132.44  131.00  129.68  126.21  125.44  126.90  131.19" pitch_beg="107" pitch_end="119" property="0" total_score="4.881166">
+                          <syll beg_pos="96" content="t uw" end_pos="119" serr_msg="0" syll_accent="0" syll_score="4.785218">
+                              <phone beg_pos="96" content="t" dp_message="0" end_pos="109" gwpp="-0.207194"></phone>
+                              <phone beg_pos="109" content="uw" dp_message="0" end_pos="119" gwpp="-0.453195"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="meet" dp_message="0" end_pos="146" global_index="2" index="2" pitch="  132.71  132.71  133.05  133.82  134.64  135.58  137.03  138.25  139.33  139.72  140.22  140.69  140.81  140.61  138.06  135.85  131.97  131.10  130.85  133.22  135.60  137.98  137.48  135.33  131.32  128.51  125.68" pitch_beg="119" pitch_end="146" property="0" total_score="4.963177">
+                          <syll beg_pos="119" content="m iy t" end_pos="146" serr_msg="0" syll_accent="0" syll_score="4.997366">
+                              <phone beg_pos="119" content="m" dp_message="0" end_pos="126" gwpp="-0.002192"></phone>
+                              <phone beg_pos="126" content="iy" dp_message="0" end_pos="136" gwpp="-0.000038"></phone>
+                              <phone beg_pos="136" content="t" dp_message="0" end_pos="146" gwpp="-0.006097"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="146" content="you" dp_message="0" end_pos="172" global_index="3" index="3" pitch="  122.55  122.55  121.73  121.27  121.16  120.87  120.47  120.18  120.17  120.58  121.24  122.06  122.73  123.17  123.32  123.20  122.89  122.12  121.20  119.48  117.36  115.23  113.73" pitch_beg="146" pitch_end="169" property="0" total_score="4.963878">
+                          <syll beg_pos="146" content="y uw" end_pos="172" serr_msg="0" syll_accent="0" syll_score="4.999321">
+                              <phone beg_pos="146" content="y" dp_message="0" end_pos="166" gwpp="-0.000305"></phone>
+                              <phone beg_pos="166" content="uw" dp_message="0" end_pos="172" gwpp="-0.002074"></phone>
+                          </syll>
+                      </word>
+                  </sentence>
+              </read_chapter>
+          </rec_paper>
+      </read_sentence>
+  </xml_result>

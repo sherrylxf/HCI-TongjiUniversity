@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <xml_result>
+      <read_sentence lan="en" type="study" version="7.0.0.1020">
+          <rec_paper>
+              <read_chapter accuracy_score="1.947127" beg_pos="0" content="She is reading a book under the tree." end_pos="246" except_info="28676" fluency_score="3.438234" integrity_score="0.625000" is_rejected="true" reject_type="128" score_pattern="loose" standard_score="1.386766" total_score="0.022289" word_count="8">
+                  <sentence accuracy_score="0.018125" beg_pos="0" content="she is reading a book under the tree" end_pos="246" fluency_score="0.032005" index="0" standard_score="0.012909" total_score="0.022289" word_count="8">
+                      <word beg_pos="112" content="she" dp_message="0" end_pos="119" global_index="0" index="0" pitch="  131.00  131.00  129.68  126.21  125.44  126.90  131.19" pitch_beg="112" pitch_end="119" property="0" total_score="2.263145">
+                          <syll beg_pos="112" content="sh iy" end_pos="119" serr_msg="1" syll_accent="0" syll_score="1.839397">
+                              <phone beg_pos="112" content="sh" dp_message="0" end_pos="116" gwpp="-2.879696"></phone>
+                              <phone beg_pos="116" content="iy" dp_message="0" end_pos="119" gwpp="-7.086691"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="is" dp_message="16" end_pos="119" global_index="1" index="1" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="ih z" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="ih" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="z" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="reading" dp_message="16" end_pos="119" global_index="2" index="2" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="r iy" end_pos="119" serr_msg="1" syll_accent="1" syll_score="0.000000">
+                              <phone beg_pos="119" content="&apos;r" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="iy" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                          <syll beg_pos="119" content="d ih ng" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="d" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="ih" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="ng" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="a" dp_message="16" end_pos="119" global_index="3" index="3" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="ax" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="ax" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="book" dp_message="16" end_pos="119" global_index="4" index="4" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="b uh k" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="b" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="uh" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="k" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="under" dp_message="16" end_pos="119" global_index="5" index="5" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="ah n" end_pos="119" serr_msg="1" syll_accent="1" syll_score="0.000000">
+                              <phone beg_pos="119" content="&apos;ah" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="n" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                          <syll beg_pos="119" content="d ax" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="d" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="ax" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="the" dp_message="16" end_pos="119" global_index="6" index="6" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="dh ax" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="dh" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="ax" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                      <word beg_pos="119" content="tree" dp_message="16" end_pos="119" global_index="7" index="7" property="0" total_score="0.000000">
+                          <syll beg_pos="119" content="tr iy" end_pos="119" serr_msg="1" syll_accent="0" syll_score="0.000000">
+                              <phone beg_pos="119" content="tr" dp_message="16" end_pos="119"></phone>
+                              <phone beg_pos="119" content="iy" dp_message="16" end_pos="119"></phone>
+                          </syll>
+                      </word>
+                  </sentence>
+              </read_chapter>
+          </rec_paper>
+      </read_sentence>
+  </xml_result>
