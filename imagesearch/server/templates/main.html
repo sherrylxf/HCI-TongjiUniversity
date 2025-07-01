@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Search Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: rgba(228, 198, 208, 1);
+    }
+
+    h1 {
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(160deg, rgba(219, 155, 171, 1) 30%, rgba(179, 140, 201, 1) 70%);
+      border-radius: 5px;
+      color: white;
+      text-shadow: 2px 3px 5px rgba(214, 211, 224, 1);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    h1:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .select-button {
+      background: linear-gradient(160deg, rgb(245, 216, 223) 30%, rgb(217, 199, 227) 70%);
+      border: none;
+      padding: 8px 16px;
+      color: rgb(65, 61, 61);
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .select-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .preview img {
+      max-width: 300px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    .results, .favorites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .result-item, .favorite-item {
+      width: 30%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .result-item img, .favorite-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .result-item button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #f7c4d0, #d9bce8);
+      border: none;
+      border-radius: 20px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .result-item button:hover {
+      background: linear-gradient(135deg, #f0a9ba, #c59ede);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .favorite-item button {
+      margin-top: 10px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #f0b1b1, #d38fa0);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease;
+    }
+
+    .favorite-item button:hover {
+      background: linear-gradient(135deg, #e17979, #b26883);
+      transform: translateY(-1px);
+    }
+
+    .search-button {
+      background: linear-gradient(160deg, rgb(245, 216, 223) 30%, rgb(217, 199, 227) 70%);
+      border: none;
+      color: rgb(65, 61, 61);
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .search-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .searching-button {
+      background: linear-gradient(135deg, #b36ac7, #e39aaa);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .searching-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .loader-icon {
+      margin-left: 15px;
+      vertical-align: middle;
+      display: none;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #loader {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Image Search System</h1>
+
+    <div class="section">
+      <label for="file">Upload an image:</label>
+      <input type="file" class="select-button" id="file" accept="image/*" required>
+      <div class="preview">
+        <h3>Preview:</h3>
+        <img id="preview-img" src="#" style="display: none; object-fit: contain; border: 1px solid #ccc;">
+      </div>
+    </div>
+
+    <div class="section">
+      <label for="category">Select category:</label>
+      <select id="category" class="search-button">
+        <option value="all">All</option>
+        <option value="boots">Boots</option>
+        <option value="sandals">Sandals</option>
+        <option value="shoes">Shoes</option>
+        <option value="slippers">Slippers</option>
+      </select>
+
+      <label for="k">Select number of results:</label>
+      <select id="k" class="search-button">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9" selected>9</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <button id="search-btn" class="searching-button">Search 🔍</button>
+      <img id="loader" src="/images/loading.gif" alt="Loading..." width="40px" class="loader-icon">
+    </div>
+
+    <div class="section">
+      <div id="result-summary" style="font-weight: bold;"></div>
+      <div class="results" id="result-images"></div>
+    </div>
+
+    <div class="section">
+      <h3>Favorites:</h3>
+      <button onclick="saveFavorites()" class="search-button">Create Folder</button>
+      <div class="favorites" id="favorites-box"></div>
+    </div>
+  </div>
+
+  <script>
+    let selectedFile = null;
+    let currentFavoritesFolder = "";
+
+    const fileInput = document.getElementById('file');
+    const previewImg = document.getElementById('preview-img');
+    const searchBtn = document.getElementById('search-btn');
+    const loader = document.getElementById('loader');
+    const resultBox = document.getElementById('result-images');
+    const summary = document.getElementById('result-summary');
+    const favoritesBox = document.getElementById('favorites-box');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      selectedFile = file;
+      const reader = new FileReader();
+      reader.onload = e => {
+        previewImg.src = e.target.result;
+        previewImg.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    });
+
+    searchBtn.addEventListener('click', () => {
+      if (!selectedFile) {
+        alert("Please upload an image first.");
+        return;
+      }
+
+      loader.style.display = "inline-block";
+      resultBox.innerHTML = '';
+      summary.innerText = '';
+      favoritesBox.innerHTML = '';
+
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      formData.append('category', document.getElementById('category').value);
+      formData.append('k', document.getElementById('k').value);
+      formData.append('folder_name', "my_folder");
+
+      fetch('/imgUpload', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        loader.style.display = "none";
+        const images = [];
+        for (let key in data) {
+          if (key.startsWith('image')) {
+            images.push(data[key]);
+          }
+        }
+        currentFavoritesFolder = data.favorites_folder;
+        summary.innerText = `Found ${images.length} similar images:`;
+
+        images.forEach(url => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'result-item';
+
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = "Result";
+
+          const favBtn = document.createElement('button');
+          favBtn.textContent = "Add to Favorites";
+          favBtn.onclick = () => addToFavorites(url);
+
+          wrapper.appendChild(img);
+          wrapper.appendChild(favBtn);
+          resultBox.appendChild(wrapper);
+        });
+      })
+      .catch(err => {
+        loader.style.display = "none";
+        alert("Search failed. Check server.");
+        console.error(err);
+      });
+    });
+
+    function addToFavorites(url) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'favorite-item';
+
+      const img = document.createElement('img');
+      img.src = url;
+
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = 'Remove';
+      removeBtn.onclick = () => wrapper.remove();
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(removeBtn);
+      favoritesBox.appendChild(wrapper);
+
+      fetch("/addFavorite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ folder: currentFavoritesFolder, image: url })
+      })
+      .then(res => res.json())
+      .then(data => console.log("Saved to:", data.saved_to))
+      .catch(err => console.error("Save failed", err));
+    }
+
+    function saveFavorites() {
+      alert(`Favorites will be stored under session folder: ${currentFavoritesFolder}`);
+    }
+  </script>
+</body>
+</html>
